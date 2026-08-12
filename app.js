@@ -26,17 +26,16 @@ form.addEventListener('submit', async (event) => {
   button.disabled = true;
   button.firstChild.textContent = 'Gönderiliyor... ';
   try {
-    const response = await fetch(url, {
+    await fetch(url, {
       method: 'POST',
+      mode: 'no-cors',
       headers: {'Content-Type': 'text/plain;charset=utf-8'},
       body: JSON.stringify(data)
     });
-    const result = await response.json();
-    if (!result.ok) throw new Error(result.message || 'Kayıt gerçekleştirilemedi.');
     form.reset();
     document.querySelector('#futureCityCount').textContent = '0';
     document.querySelector('#futureMessageCount').textContent = '0';
-    show(`Mektubunuz kaydedildi. Kayıt numaranız: ${result.recordId}`, 'success');
+    show('Mektubunuz geleceğe gönderildi. Teşekkür ederiz.', 'success');
   } catch (error) {
     show(`Gönderim sırasında hata oluştu: ${error.message}`, 'error');
   } finally {
