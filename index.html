@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Uşak'ın Geleceğine Mektup">
+  <title>Uşak'ın Geleceğine Mektup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <div class="hero-icon" aria-hidden="true">✉</div>
+      <div>
+        <p class="eyebrow">Kurtuluşun ruhuyla geleceği birlikte yazıyoruz</p>
+        <h1>Uşak'ın <span>Geleceğine Mektup</span></h1>
+      </div>
+      <div class="hero-icon feather" aria-hidden="true">❧</div>
+    </header>
+
+    <section class="intro">
+      <div>
+        <h2>Sevgili Geleceğin Uşaklısı,</h2>
+        <p>Bugün yaşadığım Uşak'tan sana, yani gelecekteki Uşaklıya birkaç satır bırakmak istiyorum. Daha güzel yarınlar için hayallerimi, düşüncelerimi ve mesajımı seninle paylaşıyorum.</p>
+      </div>
+      <div class="stamp" aria-label="Geleceğe 2126, selam olsun">
+        <small>GELECEĞE</small><strong>2126</strong><small>SELAM OLSUN</small>
+      </div>
+    </section>
+
+    <form id="letterForm" novalidate>
+      <div class="question-card">
+        <div class="number">1</div>
+        <label for="futureCity">100 yıl sonra nasıl bir Uşak görmek istersiniz?</label>
+        <textarea id="futureCity" name="futureCity" maxlength="2000" required placeholder="Hayalinizdeki Uşak'ı anlatın..."></textarea>
+        <div class="counter"><span id="futureCityCount">0</span>/2000</div>
+      </div>
+
+      <div class="question-card">
+        <div class="number">2</div>
+        <label for="futureMessage">Geleceğin Uşaklılarına hangi mesajı bırakmak istersiniz?</label>
+        <textarea id="futureMessage" name="futureMessage" maxlength="2000" required placeholder="Geleceğe mesajınızı yazın..."></textarea>
+        <div class="counter"><span id="futureMessageCount">0</span>/2000</div>
+      </div>
+
+      <fieldset>
+        <legend>İsteğe bağlı bilgiler</legend>
+        <p class="optional-note">Bu alanları doldurmak zorunlu değildir.</p>
+        <div class="field-grid">
+          <label>Ad Soyad<input name="fullName" maxlength="100" autocomplete="name"></label>
+          <label>Yaş<input name="age" type="number" min="5" max="120" inputmode="numeric"></label>
+          <label>Mahalle<input name="neighborhood" maxlength="100"></label>
+          <label>Meslek<input name="occupation" maxlength="100"></label>
+        </div>
+      </fieldset>
+
+      <label class="consent">
+        <input id="consent" name="consent" type="checkbox" required>
+        <span>Gönderdiğim metnin etkinlik kapsamında saklanmasını ve kişisel bilgileri kendi isteğimle paylaştığımı kabul ediyorum.</span>
+      </label>
+
+      <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+      <button id="submitButton" type="submit">Mektubumu Geleceğe Gönder <span>➤</span></button>
+    </form>
+
+    <footer>
+      <img src="assets/usak-kent-konseyi-logo.png" alt="Uşak Kent Konseyi">
+      <p>UŞAK'IN ORTAK AKLI</p>
+    </footer>
+  </main>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
